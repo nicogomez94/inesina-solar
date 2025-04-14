@@ -1,0 +1,7 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine  on
+RewriteBase /
+RewriteRule  "^obras_realizadas/?$" obras2.php  [L]
+RewriteRule  "^obras_realizadas/(.*)"  detalle2.php?url_param=$1&categoria=1  [L]
+</IfModule>

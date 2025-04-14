@@ -1,0 +1,39 @@
+<?php
+# FileName="Connection_php_mysql.htm"
+# Type="MYSQL"
+# HTTP="true"
+/*$hostname_inesina = "localhost";
+$database_inesina = "inesina";
+$username_inesina = "developer2018";
+$password_inesina = "developer2018";
+
+$inesina = mysqli_connect($hostname_inesina, $username_inesina, $password_inesina, $database_inesina);  
+*/
+
+
+$hostname_inesina = "190.228.29.62";
+$database_inesina = "inesina2019";
+
+/*
+$hostname_inesina = "190.228.29.62";
+$database_inesina = "inesina2018";
+*/
+
+$username_inesina = "inesina2018";
+$password_inesina = "8Akim5lorJO4";
+
+ 
+  $inesina = mysqli_connect($hostname_inesina, $username_inesina, $password_inesina, $database_inesina); 
+  if(!preg_match('/admin/',$_SERVER['PHP_SELF'])) {
+	if (!isset($_SESSION)) {session_start();}
+		mysqli_select_db($inesina,$database_inesina);
+		include_once "admin/funciones.php"; 
+		
+		
+	if ((isset($_SESSION['MM_User_Id'])) && ($_SESSION['MM_User_Id'] != "")) {
+		$id_session = $_SESSION['MM_User_Id'];
+	} else {
+		$id_session = session_id();	
+	}
+  }
+?>
